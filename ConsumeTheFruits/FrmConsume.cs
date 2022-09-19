@@ -20,6 +20,7 @@ namespace ConsumeTheFruits
         Random yspeed = new Random();
         bool left, right;
         string move;
+        int score, Time;
 
 
         public FrmConsume()
@@ -29,7 +30,6 @@ namespace ConsumeTheFruits
             {
                 int x = 40 + (i * 75);
                 fruit[i] = new Fruit(x);
-
             }
 
         }
@@ -51,22 +51,29 @@ namespace ConsumeTheFruits
                 fruit[i].y += rndmspeed;
                 dino.DrawDino(g);
                 fruit[i].DrawFruit(g);
-
             }
 
 
         }
 
-        private void TmrPlanet_Tick(object sender, EventArgs e)
+        private void TmrFruit_Tick(object sender, EventArgs e)
         {
+
             for (int i = 0; i < 10; i++)
             {
                 fruit[i].MoveFruit();
+                if (dino.dinoRec.IntersectsWith(fruit[i].fruitRec))
+                {
+                    fruit[i].y = 1; // set  y value of planetRec
+                    score += 1;// gain one score
+                    LblScore.Text = score.ToString();// display number of lives
 
+                }
                 //if a planet reaches the bottom of the Game Area reposition it at the top
                 if (fruit[i].y >= PnlGame.Height)
                 {
-                    fruit[i].y = 30;
+                    fruit[i].y = 1;
+                 
                 }
 
             }
@@ -107,9 +114,35 @@ namespace ConsumeTheFruits
 
         }
 
+
+        private void startToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Time = 60;
+            LblScore.Text = score.ToString();
+            // pass lives from LblLives Text property to lives variable
+            Time = int.Parse(LblTime.Text);
+            TmrTime.Enabled = true;
+            TmrFruit.Enabled = true;
+            TmrDino.Enabled = true;
+        }
+
+        private void stopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TmrTime.Enabled = false;
+            TmrFruit.Enabled = false;
+            TmrDino.Enabled = false;
+        }
+
+        private void TmrTime_Tick(object sender, EventArgs e)
+        {
+            Time += -1;// Lose one Second
+            LblTime.Text = Time.ToString();// display number of Time left
+        }
+
+
         private void True(object sender, PreviewKeyDownEventArgs e)
         {
-
+          
         }
     }
 }

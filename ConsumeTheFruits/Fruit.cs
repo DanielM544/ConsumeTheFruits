@@ -13,13 +13,12 @@ namespace ConsumeTheFruits
         public int x, y, width, height;//variables for the rectangle
         public Image fruitImage;//variable for the planet's image
         public Rectangle fruitRec;//variable for a rectangle to place our image in
-        public int score;
         //Create a constructor (initialises the values of the fields)
         public Fruit(int spacing)
         {
             x = spacing;
 
-            y = 10;
+            y = 1;
             width = 20;
             height = 20;
             //planetImage contains the plane1.png image
