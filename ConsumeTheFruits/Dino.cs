@@ -26,11 +26,52 @@ namespace ConsumeTheFruits
             dino = Properties.Resources.dino1;
             dinoRec = new Rectangle(x, y, width, height);
         }
+
         //methods
         public void DrawDino(Graphics g)
         {
 
             g.DrawImage(dino, dinoRec);
+        }
+
+
+        public void MoveDino(string move)
+        {
+            dinoRec.Location = new Point(x, y);
+
+            if (move == "right")
+            {
+                if (dinoRec.Location.X > 450) // is spaceship within 50 of right side
+                {
+
+                    x = 450;
+                    dinoRec.Location = new Point(x, y);
+                }
+                else
+                {
+                    x += 5;
+                    dinoRec.Location = new Point(x, y);
+                }
+
+            }
+
+            if (move == "left")
+            {
+                if (dinoRec.Location.X < 10) // is spaceship within 10 of left side
+                {
+
+                    x = 10;
+                    dinoRec.Location = new Point(x, y);
+                }
+                else
+                {
+                    x -= 5;
+                    dinoRec.Location = new Point(x, y);
+                }
+
+            }
+
+
         }
 
     }

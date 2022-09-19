@@ -12,7 +12,6 @@ namespace ConsumeTheFruits
         // declare fields to use in the class
         public int x, y, width, height;//variables for the rectangle
         public Image fruitImage;//variable for the planet's image
-
         public Rectangle fruitRec;//variable for a rectangle to place our image in
         public int score;
         //Create a constructor (initialises the values of the fields)

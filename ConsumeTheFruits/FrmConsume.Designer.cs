@@ -32,6 +32,7 @@ namespace ConsumeTheFruits
             this.components = new System.ComponentModel.Container();
             this.PnlGame = new System.Windows.Forms.Panel();
             this.TmrPlanet = new System.Windows.Forms.Timer(this.components);
+            this.TmrDino = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // PnlGame
@@ -42,11 +43,19 @@ namespace ConsumeTheFruits
             this.PnlGame.Size = new System.Drawing.Size(776, 426);
             this.PnlGame.TabIndex = 0;
             this.PnlGame.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlGame_Paint);
+            this.PnlGame.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PnlGame_MouseDown);
+            this.PnlGame.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.True);
             // 
             // TmrPlanet
             // 
             this.TmrPlanet.Enabled = true;
             this.TmrPlanet.Tick += new System.EventHandler(this.TmrPlanet_Tick);
+            // 
+            // TmrDino
+            // 
+            this.TmrDino.Enabled = true;
+            this.TmrDino.Interval = 25;
+            this.TmrDino.Tick += new System.EventHandler(this.TmrDino_Tick);
             // 
             // FrmConsume
             // 
@@ -57,6 +66,9 @@ namespace ConsumeTheFruits
             this.Name = "FrmConsume";
             this.Text = "ConsumeTheFruits";
             this.Load += new System.EventHandler(this.FrmConsume_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmConsume_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmConsume_KeyUp);
+            this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.True);
             this.ResumeLayout(false);
 
         }
@@ -65,6 +77,7 @@ namespace ConsumeTheFruits
 
         private System.Windows.Forms.Panel PnlGame;
         private System.Windows.Forms.Timer TmrPlanet;
+        private System.Windows.Forms.Timer TmrDino;
     }
 }
 

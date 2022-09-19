@@ -16,7 +16,10 @@ namespace ConsumeTheFruits
 
         // declare space for an array of 7 objects called Fruit 
         Fruit[] fruit = new Fruit[10];
+        Dino dino = new Dino();
         Random yspeed = new Random();
+        bool left, right;
+        string move;
 
 
         public FrmConsume()
@@ -46,7 +49,6 @@ namespace ConsumeTheFruits
                 // generate a random number from 5 to 20 and put it in rndmspeed
                 int rndmspeed = yspeed.Next(5, 20);
                 fruit[i].y += rndmspeed;
-                Dino dino = new Dino();
                 dino.DrawDino(g);
                 fruit[i].DrawFruit(g);
 
@@ -69,6 +71,44 @@ namespace ConsumeTheFruits
 
             }
             PnlGame.Invalidate();//makes the paint event fire to redraw the panel
+
+        }
+
+        private void PnlGame_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void FrmConsume_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Left) { left = true; }
+            if (e.KeyData == Keys.Right) { right = true; }
+
+        }
+
+        private void FrmConsume_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Left) { left = false; }
+            if (e.KeyData == Keys.Right) { right = false; }
+        }
+
+        private void TmrDino_Tick(object sender, EventArgs e)
+        {
+            if (right) // if right arrow key pressed
+            {
+                move = "right";
+                dino.MoveDino(move);
+            }
+            if (left) // if left arrow key pressed
+            {
+                move = "left";
+                dino.MoveDino(move);
+            }
+
+        }
+
+        private void True(object sender, PreviewKeyDownEventArgs e)
+        {
 
         }
     }
