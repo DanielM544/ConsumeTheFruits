@@ -46,8 +46,10 @@ namespace ConsumeTheFruits
                 // generate a random number from 5 to 20 and put it in rndmspeed
                 int rndmspeed = yspeed.Next(5, 20);
                 fruit[i].y += rndmspeed;
-
+                Dino dino = new Dino();
+                dino.DrawDino(g);
                 fruit[i].DrawFruit(g);
+
             }
 
 
