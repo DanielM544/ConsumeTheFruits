@@ -16,6 +16,7 @@ namespace ConsumeTheFruits
 
         // declare space for an array of 7 objects called Fruit 
         Fruit[] fruit = new Fruit[10];
+        Random yspeed = new Random();
 
 
         public FrmConsume()
@@ -42,6 +43,10 @@ namespace ConsumeTheFruits
             for (int i = 0; i < 10; i++)
             {
                 //call the Planet class's drawPlanet method to draw the images
+                // generate a random number from 5 to 20 and put it in rndmspeed
+                int rndmspeed = yspeed.Next(5, 20);
+                fruit[i].y += rndmspeed;
+
                 fruit[i].DrawFruit(g);
             }
 

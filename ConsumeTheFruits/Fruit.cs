@@ -35,7 +35,6 @@ namespace ConsumeTheFruits
         }
         public void MoveFruit()
         {
-            y += 5;
 
             fruitRec.Location = new Point(x, y);
         }
