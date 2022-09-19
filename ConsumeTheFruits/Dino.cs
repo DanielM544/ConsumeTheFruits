@@ -41,10 +41,10 @@ namespace ConsumeTheFruits
 
             if (move == "right")
             {
-                if (dinoRec.Location.X > 450) // is spaceship within 50 of right side
+                if (dinoRec.Location.X > 730) // is spaceship within 50 of right side
                 {
 
-                    x = 450;
+                    x = 730;
                     dinoRec.Location = new Point(x, y);
                 }
                 else
