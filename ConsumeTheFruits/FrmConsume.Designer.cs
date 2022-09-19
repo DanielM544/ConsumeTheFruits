@@ -32,6 +32,7 @@ namespace ConsumeTheFruits
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsume));
             this.PnlGame = new System.Windows.Forms.Panel();
+            this.Picture1 = new System.Windows.Forms.PictureBox();
             this.TmrFruit = new System.Windows.Forms.Timer(this.components);
             this.TmrDino = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
@@ -45,10 +46,9 @@ namespace ConsumeTheFruits
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Picture1 = new System.Windows.Forms.PictureBox();
             this.PnlGame.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Picture1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // PnlGame
@@ -59,9 +59,22 @@ namespace ConsumeTheFruits
             this.PnlGame.Name = "PnlGame";
             this.PnlGame.Size = new System.Drawing.Size(776, 422);
             this.PnlGame.TabIndex = 0;
+            this.PnlGame.UseWaitCursor = true;
             this.PnlGame.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlGame_Paint);
             this.PnlGame.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PnlGame_MouseDown);
             this.PnlGame.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.True);
+            // 
+            // Picture1
+            // 
+            this.Picture1.BackColor = System.Drawing.Color.Transparent;
+            this.Picture1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Picture1.Image = ((System.Drawing.Image)(resources.GetObject("Picture1.Image")));
+            this.Picture1.Location = new System.Drawing.Point(233, 55);
+            this.Picture1.Name = "Picture1";
+            this.Picture1.Size = new System.Drawing.Size(303, 300);
+            this.Picture1.TabIndex = 0;
+            this.Picture1.TabStop = false;
+            this.Picture1.UseWaitCursor = true;
             // 
             // TmrFruit
             // 
@@ -172,17 +185,6 @@ namespace ConsumeTheFruits
             this.stopToolStripMenuItem.Text = "Stop";
             this.stopToolStripMenuItem.Click += new System.EventHandler(this.stopToolStripMenuItem_Click);
             // 
-            // Picture1
-            // 
-            this.Picture1.BackColor = System.Drawing.Color.Transparent;
-            this.Picture1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.Picture1.Image = ((System.Drawing.Image)(resources.GetObject("Picture1.Image")));
-            this.Picture1.Location = new System.Drawing.Point(233, 55);
-            this.Picture1.Name = "Picture1";
-            this.Picture1.Size = new System.Drawing.Size(303, 300);
-            this.Picture1.TabIndex = 0;
-            this.Picture1.TabStop = false;
-            // 
             // FrmConsume
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -204,9 +206,9 @@ namespace ConsumeTheFruits
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmConsume_KeyUp);
             this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.True);
             this.PnlGame.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Picture1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Picture1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -145,8 +145,10 @@ namespace ConsumeTheFruits
                 TmrTime.Enabled = false;
                 TmrFruit.Enabled = false;
                 TmrDino.Enabled = false;
+                Time = 60;
+                score = 0;
+                TmrFruit.Interval = 100;
                 MessageBox.Show("Game Over");
-
             }
 
         }
