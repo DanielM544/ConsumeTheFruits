@@ -36,7 +36,7 @@ namespace ConsumeTheFruits
 
         private void FrmConsume_Load(object sender, EventArgs e)
         {
-
+            TxtName.Focus();
         }
 
         private void PnlGame_Paint(object sender, PaintEventArgs e)
@@ -67,7 +67,7 @@ namespace ConsumeTheFruits
                     fruit[i].y = 1; // set  y value of planetRec
                     score += 1;// gain one score
                     LblScore.Text = score.ToString();// display number of lives
-
+                    TmrFruit.Interval += -1;
                 }
                 //if a planet reaches the bottom of the Game Area reposition it at the top
                 if (fruit[i].y >= PnlGame.Height)
@@ -124,6 +124,8 @@ namespace ConsumeTheFruits
             TmrTime.Enabled = true;
             TmrFruit.Enabled = true;
             TmrDino.Enabled = true;
+            TxtName.Enabled = false;
+            Picture1.Visible = false;
         }
 
         private void stopToolStripMenuItem_Click(object sender, EventArgs e)
@@ -137,6 +139,16 @@ namespace ConsumeTheFruits
         {
             Time += -1;// Lose one Second
             LblTime.Text = Time.ToString();// display number of Time left
+
+            if (Time == 0)
+            {
+                TmrTime.Enabled = false;
+                TmrFruit.Enabled = false;
+                TmrDino.Enabled = false;
+                MessageBox.Show("Game Over");
+
+            }
+
         }
 
 

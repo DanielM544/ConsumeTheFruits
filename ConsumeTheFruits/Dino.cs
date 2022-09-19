@@ -49,7 +49,7 @@ namespace ConsumeTheFruits
                 }
                 else
                 {
-                    x += 5;
+                    x += 7;
                     dinoRec.Location = new Point(x, y);
                 }
 
@@ -65,7 +65,7 @@ namespace ConsumeTheFruits
                 }
                 else
                 {
-                    x -= 5;
+                    x -= 7;
                     dinoRec.Location = new Point(x, y);
                 }
 

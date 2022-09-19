@@ -30,8 +30,8 @@ namespace ConsumeTheFruits
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsume));
             this.PnlGame = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.TmrFruit = new System.Windows.Forms.Timer(this.components);
             this.TmrDino = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
@@ -45,14 +45,16 @@ namespace ConsumeTheFruits
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Picture1 = new System.Windows.Forms.PictureBox();
             this.PnlGame.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture1)).BeginInit();
             this.SuspendLayout();
             // 
             // PnlGame
             // 
             this.PnlGame.BackColor = System.Drawing.Color.SkyBlue;
-            this.PnlGame.Controls.Add(this.panel1);
+            this.PnlGame.Controls.Add(this.Picture1);
             this.PnlGame.Location = new System.Drawing.Point(12, 96);
             this.PnlGame.Name = "PnlGame";
             this.PnlGame.Size = new System.Drawing.Size(776, 422);
@@ -60,15 +62,6 @@ namespace ConsumeTheFruits
             this.PnlGame.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlGame_Paint);
             this.PnlGame.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PnlGame_MouseDown);
             this.PnlGame.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.True);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Location = new System.Drawing.Point(770, 238);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(559, 240);
-            this.panel1.TabIndex = 1;
-            this.panel1.Visible = false;
             // 
             // TmrFruit
             // 
@@ -101,9 +94,8 @@ namespace ConsumeTheFruits
             // 
             // TxtName
             // 
-            this.TxtName.Enabled = false;
             this.TxtName.Font = new System.Drawing.Font("Coolvetica Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtName.Location = new System.Drawing.Point(94, 57);
+            this.TxtName.Location = new System.Drawing.Point(75, 61);
             this.TxtName.Name = "TxtName";
             this.TxtName.Size = new System.Drawing.Size(139, 27);
             this.TxtName.TabIndex = 1;
@@ -122,7 +114,7 @@ namespace ConsumeTheFruits
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Coolvetica Rg", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(268, 50);
+            this.label3.Location = new System.Drawing.Point(257, 37);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(279, 38);
             this.label3.TabIndex = 5;
@@ -160,23 +152,36 @@ namespace ConsumeTheFruits
             this.stopToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 27);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // startToolStripMenuItem
             // 
+            this.startToolStripMenuItem.Font = new System.Drawing.Font("Coolvetica Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startToolStripMenuItem.Name = "startToolStripMenuItem";
-            this.startToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.startToolStripMenuItem.Size = new System.Drawing.Size(57, 23);
             this.startToolStripMenuItem.Text = "Start";
             this.startToolStripMenuItem.Click += new System.EventHandler(this.startToolStripMenuItem_Click_1);
             // 
             // stopToolStripMenuItem
             // 
+            this.stopToolStripMenuItem.Font = new System.Drawing.Font("Coolvetica Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.stopToolStripMenuItem.Name = "stopToolStripMenuItem";
-            this.stopToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.stopToolStripMenuItem.Size = new System.Drawing.Size(54, 23);
             this.stopToolStripMenuItem.Text = "Stop";
             this.stopToolStripMenuItem.Click += new System.EventHandler(this.stopToolStripMenuItem_Click);
+            // 
+            // Picture1
+            // 
+            this.Picture1.BackColor = System.Drawing.Color.Transparent;
+            this.Picture1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Picture1.Image = ((System.Drawing.Image)(resources.GetObject("Picture1.Image")));
+            this.Picture1.Location = new System.Drawing.Point(233, 55);
+            this.Picture1.Name = "Picture1";
+            this.Picture1.Size = new System.Drawing.Size(303, 300);
+            this.Picture1.TabIndex = 0;
+            this.Picture1.TabStop = false;
             // 
             // FrmConsume
             // 
@@ -201,6 +206,7 @@ namespace ConsumeTheFruits
             this.PnlGame.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,13 +222,13 @@ namespace ConsumeTheFruits
         private System.Windows.Forms.TextBox TxtName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label LblTime;
         private System.Windows.Forms.Timer TmrTime;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem startToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stopToolStripMenuItem;
+        private System.Windows.Forms.PictureBox Picture1;
     }
 }
 
